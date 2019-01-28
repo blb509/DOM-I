@@ -46,7 +46,20 @@ let a = document.querySelectorAll("a");
 let navWords = Object.values(siteContent.nav);
 for (let i = 0; i < a.length; i++) {
   a[i].textContent = navWords[i];
+  a[i].style.color = "green";
 }
+
+let nav = document.querySelector("nav");
+
+const start = document.createElement("a");
+start.textContent = "Start";
+start.style.color = "green";  
+nav.prepend(start);
+
+const end = document.createElement("a");
+end.textContent = "End";  
+end.style.color = "green";  
+nav.appendChild(end);
 
 let main = document.querySelector("h1");
 main.textContent = siteContent["cta"]["h1"];
@@ -102,5 +115,6 @@ for (let i = 0; i < contactP.length; i++) {
 
 let footer = document.querySelector("footer");
 footer.textContent = siteContent["footer"]["copyright"];
+
 
 
