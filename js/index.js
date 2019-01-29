@@ -37,6 +37,84 @@ const siteContent = {
   },
 };
 
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+let a = document.querySelectorAll("a");
+let navWords = Object.values(siteContent.nav);
+for (let i = 0; i < a.length; i++) {
+  a[i].textContent = navWords[i];
+  a[i].style.color = "green";
+}
+
+let nav = document.querySelector("nav");
+
+const start = document.createElement("a");
+start.textContent = "Start";
+start.style.color = "green";  
+nav.prepend(start);
+
+const end = document.createElement("a");
+end.textContent = "End";  
+end.style.color = "green";  
+nav.appendChild(end);
+
+let main = document.querySelector("h1");
+main.textContent = siteContent["cta"]["h1"];
+
+let mainButton = document.querySelector("button");
+mainButton.textContent = siteContent["cta"]["button"];
+
+let codeSnip = document.getElementById("cta-img");
+codeSnip.setAttribute('src', siteContent["cta"]["img-src"]);
+
+let topTitles = [siteContent["main-content"]["features-h4"], siteContent["main-content"]["about-h4"]]
+let topTitle= document.querySelectorAll(".top-content h4");
+for (let i = 0; i < topTitle.length; i++) {
+  topTitle[i].textContent = topTitles[i];
+}
+
+let topParas = [siteContent["main-content"]["features-content"], siteContent["main-content"]["about-content"]]
+let topPara= document.querySelectorAll(".top-content p");
+for (let i = 0; i < topPara.length; i++) {
+  topPara[i].textContent = topParas[i];
+}
+
+let codeSnips = document.getElementById("middle-img");
+codeSnips.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+let bottomTitles = [siteContent["main-content"]["services-h4"],
+                    siteContent["main-content"]["product-h4"],
+                    siteContent["main-content"]["vision-h4"]]
+let bottomTitle= document.querySelectorAll(".bottom-content h4");
+for (let i = 0; i < bottomTitle.length; i++) {
+  bottomTitle[i].textContent = bottomTitles[i];
+}
+
+let bottomParas = [siteContent["main-content"]["services-content"],
+                    siteContent["main-content"]["product-content"],
+                    siteContent["main-content"]["vision-content"]]
+let bottomPara= document.querySelectorAll(".bottom-content p");
+for (let i = 0; i < bottomPara.length; i++) {
+  bottomPara[i].textContent = bottomParas[i];
+}
+
+let contactH4 = document.querySelector(".contact h4");
+contactH4.textContent = siteContent["contact"]["contact-h4"];
+
+
+let contactPS = [siteContent["contact"]["address"],
+                    siteContent["contact"]["phone"],
+                    siteContent["contact"]["email"]]
+let contactP = document.querySelectorAll(".contact p");
+for (let i = 0; i < contactP.length; i++) {
+  contactP[i].textContent = contactPS[i];
+}
+
+let footer = document.querySelector("footer");
+footer.textContent = siteContent["footer"]["copyright"];
+
+
+
